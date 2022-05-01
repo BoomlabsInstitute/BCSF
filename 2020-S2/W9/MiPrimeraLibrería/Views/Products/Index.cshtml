@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MiTiendita.Models.Producto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+
+
+<section id="pricing" class="pricing">
+      <div class="container">
+
+        <div class="section-title aos-init aos-animate" data-aos="zoom-out">
+          <h2>Pricing</h2>
+          <p>Our Competing Prices</p>
+        </div>
+
+        <div class="row">
+            @foreach (var item in Model) {
+                <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+                    <div class="box featured aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+                    <h3>@item.Nombre</h3>
+                    <h4><sup></sup>@item.Precio.ToString("C2")<span> / unidad</span></h4>
+                    <img src="@item.Imagen" style="width:100%" />
+                    <ul>
+                        <li><b>Cantidad en stock:</b> @item.Cantidad</li>
+                    </ul>
+                    <div class="btn-wrap">
+                        <a asp-area="" asp-controller="Products" asp-action="Details" asp-route-id="@item.ID" class="btn-buy">Buy Now</a>
+                        <a asp-area="" asp-controller="Products" asp-action="Edit" asp-route-id="@item.ID" class="btn-buy">Editar</a>
+                        <a asp-area="" asp-controller="Products" asp-action="Delete" asp-route-id="@item.ID" class="btn-buy">Borrar</a>
+                    </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+      </div>
+    </section>

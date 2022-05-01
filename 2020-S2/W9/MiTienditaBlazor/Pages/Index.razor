@@ -1,0 +1,97 @@
+@page "/"
+@using Microsoft.JSInterop
+@using System.Net.Http
+@inject IJSRuntime JS
+@using QuickType
+<HomeSliderComponent></HomeSliderComponent>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2>Clickeame para mostrar el Slider.</h2>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-primary" @onclick="ObtenerPaises">Toggle Slider</button>
+        </div>
+
+        <div class="col-12">
+            <ul>
+                @if (Paises is not null)
+                {
+                    @foreach (var pais in Paises)
+                    {
+                        <li>
+                            <h3>@pais.Name</h3>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+    List<Country> Paises { get; set; }
+    public bool MostrarSlider { get; set; }
+    public string RespuestaApi { get; set; }
+
+    async Task ObtenerPaises()
+    {
+        try
+        {
+
+            using (var client = new HttpClient())
+            {
+                var respuesta = await client.GetAsync("https://restcountries.eu/rest/v2/all");
+                respuesta.EnsureSuccessStatusCode();
+
+                RespuestaApi = await respuesta.Content.ReadAsStringAsync();
+
+                Paises = Country.FromJson(RespuestaApi);
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error al llamar la api. Ex: {e.ToString()}");
+        }
+    }
+    protected override void OnInitialized()
+    {
+
+        Console.WriteLine("Hola desde OnInitialized");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Console.WriteLine("Hola desde OnInitializedAsync");
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+
+
+
+        Console.WriteLine("Hola desde OnAfterRender");
+
+    }
+
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            JS.InvokeVoidAsync("interopFunctions.habilitarSlider");
+        }
+
+        Console.WriteLine("Hola desde OnAfterRenderAsync");
+
+    }
+
+}

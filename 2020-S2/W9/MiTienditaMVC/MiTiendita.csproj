@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-MiTiendita-5B0E33AC-4797-455F-8A32-3CC5EFD0DC73</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="Application.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MiPrimeraLibrería\MiPrimeraLibreria.csproj" />
+  </ItemGroup>
+
+</Project>

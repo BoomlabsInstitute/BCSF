@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+    <title> Esta es mi primera página web! </title>
+
+    <!-- Agregando el CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <div>
+        <button onclick="AgregarClase()">Clickeame!</button>
+        <button onclick="ModificarTextos()">Cambiar Texto!</button>
+        <button onclick="quitarColorRojo()">Quitar Color Rojo</button>
+    </div>
+    <!--  Trabajando con títulos -->
+    <h1 id="titulo1">Este es un titulo 1</h1>
+    <h2>Este es un titulo 2</h2>
+    <h3>Este es un titulo 3</h3>
+    <h4>Este es un titulo 4</h4>
+    <h5>Este es un titulo 5</h5>
+    <h6>Este es un titulo 6</h6>
+    <p class="texto">Lo que está pasando ahora</p>
+    <p class="texto">Esta es mi página web</p>
+    <!-- Trabajando con divs y CSS -->
+    <div class="daniel">
+        <p class="texto-grueso text-center texto-rojo">Div 1</p>
+    </div>
+
+    <!-- Salto de línea-->
+    <br />
+    <button onclick="PrepararDivs()">Preparar Divs</button>
+    <!-- Más divs -->
+    <div class="daniel">
+        <p class="texto-grueso texto-rojo">Div 2</p>
+    </div>
+
+    <!-- Trabajando con listas ordenadas -->
+    <ol start="5">
+        <li>Uno</li>
+        <li>Dos</li>
+        <li>tres</li>
+    </ol>
+    <!-- Trabajando con listas desordenadas -->
+    <ul>
+        <li>Carro </li>
+        <li>Casa </li>
+        <li>BEca </li>
+    </ul>
+    <!-- Trabajando con hypervínculos-->
+    <div>
+        <a href="/bootstrap.html">Esto es un link</a>
+        <a href="https://google.com" target="_blank">Esto es un link a Google.com</a>
+    </div>
+
+    <!-- Agregando estilos -->
+    <style>
+        .daniel {
+            color: #ffffff !important;
+            background-color: #00501b;
+        }
+
+        .texto-grueso {
+            font-size: 80px;
+        }
+
+        .texto-rojo {
+            color: red;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        #MiParrafo {
+            color: red;
+            font-size: 50px;
+            font-style: bold;
+            font-weight: 100;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #MyDiv {
+            width: 333px;
+            height: 250px;
+            background-color: red;
+            box-shadow: saddlebrown;
+            border-radius: 153px;
+        }
+
+        .texto-grande {
+            font-size: 50px;
+            font-style: bold;
+            font-weight: 100;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+
+        h1 {
+            color: blueviolet;
+        }
+
+        h3 {
+            font-size: 32px;
+        }
+    </style>
+    <!-- Agregar funcionalidad dinámica (Programáticamente) -->
+    <script>
+        console.log("Hola, Mundo!")
+
+
+        function AgregarClase() {
+            var miElemento = document.getElementById("titulo1");
+            console.log(miElemento);
+            miElemento.classList.add("texto-rojo")
+            miElemento.innerHTML = "Este es un nuevo texto para el título 1"
+        }
+
+        function ModificarTextos() {
+            var misElementos = document.getElementsByClassName("texto")
+
+            console.log(misElementos)
+
+
+            for (var i = 0; i < misElementos.length; i++) {
+                var elemento = misElementos[i]
+                console.log(elemento)
+                elemento.classList.add("texto-grande")
+                elemento.classList.add("texto-rojo")
+            }
+        }
+
+        function quitarColorRojo() {
+            var misElementos = document.getElementsByClassName("texto")
+
+            console.log(misElementos)
+
+
+            for (var i = 0; i < misElementos.length; i++) {
+                var elemento = misElementos[i]
+                console.log(elemento)
+                elemento.classList.remove("texto-rojo")
+            }
+        }
+
+        function PrepararDivs()
+        {
+            var divs = document.getElementsByClassName("daniel");
+
+            var divsConJquery = $(".daniel")
+
+            var titulo1 = $("#titulo1")
+
+            console.log("Estos son los divs con so JS: ")
+            console.log(divs)
+            console.log("Estos son los divs con JQuery: ")
+            console.log(divsConJquery)
+
+            for(var i = 0; i < divs.length; i++){
+
+                console.log(divs[i])
+            }
+
+            for(var i = 0; i < divsConJquery.length; i++){
+                console.log(divsConJquery[i])
+            }
+
+
+            console.log(titulo1)
+        }
+
+    </script>
+
+
+
+
+    <!-- Agregando el JavaScipt de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

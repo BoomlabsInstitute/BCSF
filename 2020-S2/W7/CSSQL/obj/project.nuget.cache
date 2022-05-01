@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "RUP69ZvxS/lk6bd1NjGBFT2UxsvBHooOBJhX1NF+sZTNIjEZEHznP8HVVfm0UVPMqveSZEiSKC7veKcK82ZQHA==",
+  "success": true,
+  "projectFilePath": "D:\\Boomlabs\\Computer Science 50 - Documents\\Semana 7\\W8SQL\\W8SQL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dloza\\.nuget\\packages\\microsoft.visualbasic\\10.3.0\\microsoft.visualbasic.10.3.0.nupkg.sha512",
+    "C:\\Users\\dloza\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.113\\stub.system.data.sqlite.core.netstandard.1.0.113.nupkg.sha512",
+    "C:\\Users\\dloza\\.nuget\\packages\\system.data.sqlite.core\\1.0.113.5\\system.data.sqlite.core.1.0.113.5.nupkg.sha512"
+  ],
+  "logs": []
+}

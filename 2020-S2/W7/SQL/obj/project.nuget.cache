@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Z0/CESDFHysxzIQURxSzeahyQLOL86fkj+FB/DUkJ/OfqD7+HLWfkF8TXKnCJ8LStpRGn34n1ORzW54LX1LnFg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\PC\\Desktop\\Code\\S7\\SQL\\SQL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.visualbasic\\10.3.0\\microsoft.visualbasic.10.3.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.113.2\\stub.system.data.sqlite.core.netstandard.1.0.113.2.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\system.data.sqlite.core\\1.0.113.7\\system.data.sqlite.core.1.0.113.7.nupkg.sha512"
+  ],
+  "logs": []
+}
